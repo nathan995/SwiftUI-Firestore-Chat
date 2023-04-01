@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ChatView.swift
 //  Firestore Chat
 //
 //  Created by Nathan Getachew on 4/1/23.
@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ChatView: View {
     var body: some View {
         VStack {
-            ChatView()
+          
         }
-        .background(Color("Peach"))
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ChatView()
     }
 }
