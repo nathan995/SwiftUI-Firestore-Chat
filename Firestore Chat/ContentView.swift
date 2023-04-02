@@ -11,8 +11,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ChatView()
+                .preferredColorScheme(.dark)
+                .background(.white)
         }
-        .background(Color("Peach"))
     }
 }
 

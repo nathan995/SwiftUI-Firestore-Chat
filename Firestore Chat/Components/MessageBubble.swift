@@ -17,19 +17,22 @@ struct MessageBubble: View {
             HStack {
                 Text (message.text)
                     .padding ()
-                    .background (message.received ? Color ("Gray") : Color ("Peach"))
-                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .foregroundColor(message.received ? .black : .white)
+                    .background (message.received ? Color ("Gray") : Color ("Purple"))
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             }
             .frame(maxWidth: 300, alignment: message.received ? .leading : .trailing)
             .onTapGesture {
-                showTime.toggle()
+                withAnimation{
+                    showTime.toggle()
+                }
             }
             if showTime {
                 Text("\(message.timestamp.formatted(.dateTime.hour().minute()))" )
                     .font(.caption2)
                     .foregroundColor(.gray)
                     .padding(message.received ? .leading :
-                            .trailing, 25)
+                            .trailing, 20)
             }
         }
         .frame(maxWidth: .infinity, alignment: message.received ? .leading : .trailing)
@@ -40,6 +43,6 @@ struct MessageBubble: View {
 
 struct MessageBubble_Previews: PreviewProvider {
     static var previews: some View {
-        MessageBubble(message: Message(id: "1", text: "Hey", received: false, timestamp: Date()))
+        MessageBubble(message: Message(id: "1", text: "Hebhhiuhikuhgkuyhy", received: false, timestamp: Date()))
     }
 }

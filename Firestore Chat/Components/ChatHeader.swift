@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ChatHeader: View {
     var body: some View {
-        HStack(spacing: 20){
-            AsyncImage(url: URL(string:"https://images.unsplash.com/photo-1604072366595-e75dc92d6bdc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBob3RvfGVufDB8fDB8fA%3D%3D&w=1000&q=80")!){ image in
+        HStack(spacing: 16){
+            AsyncImage(url: URL(string:"https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60")!){ image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -20,12 +20,14 @@ struct ChatHeader: View {
                 ProgressView()
             }
             VStack(alignment: .leading){
-                Text("Sarah Smith")
+                Text("Emma Watson")
                     .font(.title)
                     .bold()
+                    .foregroundColor(.white)
                 Text("Online")
                     .font(.caption)
-                    .foregroundColor(.gray)
+//                    .foregroundColor(.gray)
+                    .foregroundColor(.white.opacity(0.8))
             }
             .frame(maxWidth: .infinity,alignment: .leading)
         }
